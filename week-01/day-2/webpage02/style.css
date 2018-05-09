@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background: url(topography.png);
+}
+
+nav{
+    height: 34px;
+    padding: 0 10%;
+    background-color: black;
+
+}
+
+#logo{
+    height: 20px;
+    float: left;
+}
+
+#main-menu{
+    float: right;
+}
+a{
+    font-size: 12px;
+    color: rgb(255, 0, 153);
+    }
+
+#main-text{
+    padding: 0 10%;
+}
+h1{
+    font-size: 52px;
+}
+
+h2{
+    font-size: 36px;
+    text-align: center;
+    }
+h3{
+    font-size: 22px;
+    color: rgb(255, 0, 153);
+}
+h4, 
+h5{
+    font-weight: normal;
+}
