@@ -9,3 +9,8 @@ let currentSeconds: number = 42;
 // Write a program that prints the remaining seconds (as an integer) from a
 // day if the current time is represented by these variables
 
+let maxSeconds: number = 24 * 60 ** 2;
+
+console.log(maxSeconds - (currentHours * 60 ** 2 + currentMinutes *60 + currentSeconds));
+
+
