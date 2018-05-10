@@ -1,3 +1,6 @@
+export{}
+'use strict';
+
 let myName = 'Orsi';
 
 
