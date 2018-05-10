@@ -9,3 +9,4 @@ console.log(myVar1 + myVar2);
 console.log(myVar1 - myVar2);
 console.log(myVar1 * myVar2);
 console.log(myVar1 / myVar2);
+console.log(myVar1 % myVar2);
