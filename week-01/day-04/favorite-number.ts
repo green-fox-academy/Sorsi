@@ -1,3 +1,5 @@
+export {}
+
 'use strict';
 
 let favoriteNumber: number = 4;

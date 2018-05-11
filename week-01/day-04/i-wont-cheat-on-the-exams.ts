@@ -4,6 +4,10 @@ export {}
 
 // Create a program that writes this line 100 times:
 // "I won't cheat on the exam!"
+export {}
+
+'use strict';
+
 
 let wontCheat: string = "I won't cheat on the exam!";
 let x: number = 0;
