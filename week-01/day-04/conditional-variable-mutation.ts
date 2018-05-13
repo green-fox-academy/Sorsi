@@ -11,7 +11,6 @@ if(a % 2 === 0) {out++;
    console.log(out)
 }
 
-
 console.log(out);
 
 let b: number = 444;
@@ -61,7 +60,6 @@ let out3: string = '';
 // if time is more than 200
 // set out3 to "Time out"
 // otherwise set out3 to "Run Forest Run!"
-
 
 if (d % 4 && time !== 200) {
     out3 = 'chheck';

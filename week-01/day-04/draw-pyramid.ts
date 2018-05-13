@@ -12,11 +12,15 @@ export {}
 // The pyramid should have as many lines as lineCount is
 
 let lineCount: number = 4;
-let star: string = '*';
-let i;
 
-
-for (i = 0; i < lineCount; i++){
-    console.log (star)
-    star += '*';
+for (let i = 0; i < lineCount; i++) {
+let star = "";
+    for (let j = 0; j < lineCount-i; j++) {
+        star += " ";
+    }
+    for (let k = 0; k <= i; k++) {    
+        star += "**" ;
+     }
+    console.log(star);  
 }
+

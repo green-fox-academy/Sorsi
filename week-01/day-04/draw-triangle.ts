@@ -14,6 +14,6 @@ let lineCount: number = 4;
 let star: string = '*';
 
 for (let i: number = 0; i < lineCount; i++) {
-    console.log (star);
+    console.log(star);
     star += '*';
-}
+    }
