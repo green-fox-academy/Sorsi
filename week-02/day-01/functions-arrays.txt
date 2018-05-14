@@ -37,7 +37,13 @@ concat: másol egy array-t
 
 forEach :
 
-sorba rendezi , kiíratja a sorrendet? 
+sorba rendezi , kiíratja a sorrendet! pl [8, 9, 5, 6]
+
+ezt fogod látni:
+8
+9
+5
+6
 
 
 map function:
