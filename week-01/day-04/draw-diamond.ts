@@ -15,26 +15,29 @@ export {}
 //
 // The diamond should have as many lines as lineCount is
 
-let lineCount: number = 7;
+let lineCount2: number = 7;
 
-for (let i = 0; i < lineCount; i++) {
+for (let i = 0; i < lineCount2; i++) {
     let star = '';
-        for (let j = 0; j < lineCount - i; j++) {
+        for (let j = 0; j < lineCount2 - i; j++) {
             star += ' ';
         }
         for (let k = 0; k <= i; k++) {    
             star += '**';
          }
-        console.log(star);  
+         console.log(star);
     }
-    for (let l = 0; l < lineCount; l++) {
-        let star2 = '';
-            for (let m = 0; m < lineCount; m++) {
-                star2 += '  '; 
+
+let lineCount: number = 7;
+
+for (let m = 0; m < lineCount; m++) {
+    let star2 = '';
+        for (let n = 0; n <= lineCount; n++) {
+            star2 += ' ';
+        for (let l = 0; l < m; l++) {
+            star2 += '**'
             }
-            for (let n = 0; n <= lineCount - l; n++){
-                star2 += '*';
-            }
-            console.log(star2);
-    }
+        console.log(star2);
+        }
+}
 
