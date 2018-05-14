@@ -14,7 +14,7 @@ let baseNum: number = 123;
 
     doubling();
 
-  console.log(doubling)
+ 
 
 
 
