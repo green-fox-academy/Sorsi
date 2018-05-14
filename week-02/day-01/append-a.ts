@@ -7,6 +7,7 @@ export{}
 // -  Add all elements an `"a"` at the end
 
 let animals: string [] = ['kuty', 'macsk', 'cic']
+
 animals = animals.map((x, index) => {
     return x += 'a';
 })
