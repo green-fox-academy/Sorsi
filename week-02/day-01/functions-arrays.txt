@@ -1,0 +1,50 @@
+week 02 
+day 1
+
+hogy kell 1-1 filet commitelni?
+
+function:
+
+function 
+
+
+arrays
+
+let myArray: string[] = ['Morzsi', 'Pötyi', 'Csibész'];
+
+indexOf : valami benne van-e az array-ben vagy sem
+
+slice:  másolatot készít egy másik array-rõl
+
+2 paramétere van
+1: 
+
+splice: 
+
+1. paraméter: start
+2. paraméter: deleteCount
+3. array
+
+concat
+
+merge 2 or more arrays.  Újat csinál
+
+concat: másol egy array-t 
+
+
+
+//const array2 = myArray.concat([]);
+
+forEach :
+
+sorba rendezi , kiíratja a sorrendet? 
+
+
+map function:
+
+csinál egy új arrayt, a korábbival
+
+filter 
+
+
+
