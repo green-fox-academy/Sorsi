@@ -8,13 +8,13 @@ export{}
 
 let numList: number [] = [1, 2, 3, 8, 5, 6];
 numList = numList.map((x,index) => {
-    console.log(x,index);
+    //console.log(x,index);
     if (index === 3) {
         return 4
     }
     return x;
 });
 
-console.log(numList)
+console.log(numList[3])
 
 
