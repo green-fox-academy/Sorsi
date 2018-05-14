@@ -1,5 +1,3 @@
-
-
 function sayHello () {
     console.log('Hello World!');
 }
@@ -37,9 +35,7 @@ random
 Math.square // these are built -in functions
 */
 
-
 console.log(typeof parseInt('2'));
-
 
 let myArray: string[] = ['Morzsi', 'Pötyi', 'Csibész'];
 console.log(myArray[0]);
