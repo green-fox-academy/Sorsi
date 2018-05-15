@@ -10,9 +10,11 @@ export {}
 
 let shopItems: any[] = ['Cupcake', 2, 'Brownie', false];
 
-function sweets() {
-
-
+function sweets(value: any): any {
+  let newShopItems: any = shopItems.splice(1, 1, 'Croissant');
+  shopItems.splice(3, 1, 'Ice Cream')
+return shopItems;
 }
 
-export = sweets;
+
+console.log(sweets(shopItems))
