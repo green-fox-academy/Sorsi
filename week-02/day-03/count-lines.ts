@@ -12,15 +12,17 @@ let charEncoding = 'utf-8';
 
 function readFromFile(filePath: string) {
     try {
-        return fs.readFileSync('my-file.txt', charEncoding);
-    } catch(error) {
+        return fs.readFileSync(filePath, charEncoding);
+    } catch(error) { 
         return null;
          }
 }
 
-let result = readFromFile('my-file.txt');
+let result = readFromFile('my-text.txt');
+
 if (result !== null) {
     result.split('\r\n').forEach(line => {
         console.log(line.split('').length);
-    });
-}
+    });} else {
+        console.log ('0')
+    }
