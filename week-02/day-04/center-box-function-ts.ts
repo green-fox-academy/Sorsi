@@ -11,13 +11,12 @@ const ctx = canvas.getContext('2d');
 // Draw 3 squares with that function.
 // Avoid code duplication.
 
-function letsDrawSomeRect(x: number, y: number, w: number, h: number) {
+function letsDrawSomeRect(size: number) {
   for (let i: number = 0; i < 3; i++) {
-    ctx.fillStyle = 'red';
-    ctx.fillRect(x-(w/2), y-(h/2), w, h);
-    w += 20;
-    h += 20;
- }
+    ctx.strokeRect(canvas.width/2-(size/2), canvas.height/2-(size/2), size, size);
+    size += 20;
+    
+  }
 }
 
-letsDrawSomeRect(300, 200, 50, 50)
+letsDrawSomeRect(50)
