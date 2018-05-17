@@ -14,10 +14,10 @@ const ctx = canvas.getContext('2d');
 function letsDrawSomeRect(x: number, y: number, w: number, h: number) {
   for (let i: number = 0; i < 3; i++) {
     ctx.fillStyle = 'red';
-    ctx.fillRect(x, y, w, h);
+    ctx.fillRect(x-(w/2), y-(h/2), w, h);
     w += 20;
     h += 20;
  }
 }
 
-letsDrawSomeRect(50, 50, 50, 50)
+letsDrawSomeRect(300, 200, 50, 50)
