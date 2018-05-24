@@ -1,3 +1,4 @@
+export{}
 'use strict'
 
 /*
@@ -11,7 +12,8 @@ answer()
 */
 
 class Student {
-  learn() {
+    learn() {
+    console.log('learn');
   }
     question(teacher) {
       teacher.answer();
@@ -19,7 +21,16 @@ class Student {
 }
 
 class Teacher {
+  answer() {
+    console.log('Answer');
+  }
   teach(student) {
     student.learn();
   }
 }
+
+let orsi = new Student();
+let balazs = new Teacher();
+
+orsi.question(balazs);
+balazs.teach(orsi);

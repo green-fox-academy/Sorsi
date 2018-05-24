@@ -28,3 +28,5 @@ class Sharpie {
 let vegan = new Sharpie ('black', 45)
 
 console.log(vegan.use());
+
+export {Sharpie};
