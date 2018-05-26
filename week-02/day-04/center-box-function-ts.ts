@@ -14,8 +14,7 @@ const ctx = canvas.getContext('2d');
 function letsDrawSomeRect(size: number) {
   for (let i: number = 0; i < 3; i++) {
     ctx.strokeRect(canvas.width/2-(size/2), canvas.height/2-(size/2), size, size);
-    size += 20;
-    
+    size += ;    
   }
 }
 

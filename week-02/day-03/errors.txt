@@ -1,0 +1,43 @@
+
+
+type error: 
+
+ha más típust adok meg, mint ami a változó, pl. string: 5
+
+compaine error 
+
+
+Runtime error
+ha futtatni akarod a programot és nem értelmezhetõ a dolog 
+
+Semantic error (logical error)
+
+error kezelése:
+
+try catch finally 
+
+try : testeli a {} között lévõ részt
+
+error object 
+
+- error message
+- error thing
+finally executed the error
+
+fs.
+
+fs.redFileSync
+
+2 paramétere van: 1. az elérési útvonala
+2. : utf-a  -> karakterkikódolása 
+
+.split -> új sorba rendezed 
+'\r\n'
+
+\n -> new line
+\r -> new line
+
+mindekettõt érdemes egyszerre használni, mert nem tudhatjuk, melyik 
+szövegszerkesztõ hogy kezeli 
+'\r\n'
+ 

@@ -17,7 +17,7 @@ export {}
 
 let lineCount2: number = 7;
 
-for (let i = 0; i < lineCount2; i++) {
+for (let i = 0; i < lineCount2-4; i++) {
     let star = '';
         for (let j = 0; j < lineCount2 - i; j++) {
             star += ' ';
@@ -29,15 +29,6 @@ for (let i = 0; i < lineCount2; i++) {
     }
 
 let lineCount: number = 7;
-
-for (let m = 0; m < lineCount; m++) {
-    let star2 = '';
-        for (let n = 0; n <= lineCount; n++) {
-            star2 += ' ';
-        for (let l = 0; l < m; l++) {
-            star2 += '**'
-            }
-        console.log(star2);
-        }
-}
-
+/*
+for (let l = 0; l )
+*/

@@ -12,7 +12,7 @@ let charEncoding = 'utf-8';
 
 function readFromFile(filePath: string) {
     try {
-        return fs.readFileSync('my-fie.txt', charEncoding);
+        return fs.readFileSync(filePath, charEncoding);
     } catch(error) {
         console.log(('Unable to read file: my-file.txt'));
         return null;
@@ -20,4 +20,4 @@ function readFromFile(filePath: string) {
     }
 }
 
-console.log(readFromFile('my-file.txt'))
+console.log(readFromFile('my-text.txt'))

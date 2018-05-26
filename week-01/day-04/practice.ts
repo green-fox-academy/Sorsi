@@ -39,3 +39,8 @@ console.log(a);
 let b: number = 12;
 b = b - 4;
 console.log(b);
+
+let h: number = 10;
+console.log(h); // Prints 10
+console.log(h++); // Prints 10
+console.log(h); // Prints 11

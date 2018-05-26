@@ -1,8 +1,8 @@
 'use strict';
 
 // Boilerplate
-let canvas = document.querySelector('.canvas') as HTMLCanvasElement;
-let ctx = canvas.getContext('2d');
+const canvas = document.querySelector('.canvas') as HTMLCanvasElement;
+const ctx = canvas.getContext('2d');
 
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
 // draw a red horizontal line to the canvas' middle.

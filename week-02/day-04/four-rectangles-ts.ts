@@ -16,7 +16,7 @@ function getRandomColor(): string {
   return color;
 }
 
-function letsDrawSomeRect(x: number, y: number, w: number, h: number,) {
+function letsDrawSomeRect(x: number, y: number, w: number, h: number) {
   for (let i: number = 0; i < 4; i++) {
     ctx.fillStyle = getRandomColor();
     ctx.fillRect(x, y, w, h);

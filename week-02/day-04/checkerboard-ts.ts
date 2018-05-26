@@ -4,9 +4,7 @@ const canvas = document.querySelector('.canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
 // DO NOT TOUCH THE CODE ABOVE THIS LINE
-
 // Fill the canvas with a checkerboard pattern.
-
 
 function drawPurpleSquare(x: number, y: number, size: number) {
   let lock: boolean = true;

@@ -11,9 +11,9 @@ let myNumber: number = 0;
 function division(a: number): any {
   let num = myNumber / 10;
     if (myNumber === 0) {
-        console.log('Fail!')
+        return 'Fail!';
     } else {
-    return num
+        return num;
     }   
 }
 
