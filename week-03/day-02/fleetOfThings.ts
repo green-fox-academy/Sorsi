@@ -25,7 +25,6 @@ fleet.add(stnd);
 fleet.add(lnch);
 
 
-
 for (let i: number = 0; i < fleet.things.length; i++) {
   if (fleet.things[i].completed) {
      console.log(`${i+1} [x] ${fleet.things[i].name}`)
