@@ -35,3 +35,5 @@ for (let i: number = 0; i < dominoes.length-1; i++) {
 }
 
 print(dominoes);
+
+export { initializeDominoes };
