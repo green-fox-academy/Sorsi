@@ -5,10 +5,14 @@ export{}
 // -  Create a variable named `ai` with the following content: `[3, 4, 5, 6, 7]`
 // -  Log the sum of the elements in `ai` to the console
 
-let sutoOrsi = {
-    naem: 'Orsi',
-    age: 29
+let ai: number [] = [3, 4, 5, 6, 7];
+
+function sumElements(a: number[]) {
+    let total: number = 0;
+    for (let i: number = 0; i < ai.length; i++){
+        total += ai[i];
+    }
+    return total;
 }
 
-console.log('My age is' + sutoOrsi.naem)
-console.log('My name is' + sutoOrsi.age)
+console.log(sumElements(ai));
