@@ -1,7 +1,7 @@
 export { }
 'use strict';
 
-// Write a functiOn that takes a filename as string,
+// Write a function that takes a filename as string,
 // Open and read it. The file data represents a tic-tac-tOe
 // game result. Return 'X'/'O'/'draw' based On which player
 // has winning situatiOn.
@@ -12,30 +12,46 @@ export { }
 //console.log(ticTacResult('draw.txt'))
 // shOuld print draw
 
-let array1: string [] = ['O', 'O', 'O'];
-let array2: string [] = ['O', 'X', 'X'];
-let array3: string [] = ['X', 'O', 'X'];
+declare function require(path: string): any;
+let fs = require('fs');
+let charEncoding = 'utf-8';
 
-if (array1[0] === 'O' && array1[1] === 'O' && array1[2] === 'O'
-|| array2[0] === 'O' && array2[1] === 'O' && array2[2] === 'O'
-|| array3[0] === 'O' && array3[1] === 'O' && array3[2] === 'O'
-|| array1[0] === 'O' && array2[0] === 'O' && array3[0] === 'O'
-|| array1[1] === 'O' && array2[1] === 'O' && array3[1] === 'O'
-|| array1[2] === 'O' && array2[2] === 'O' && array3[2] === 'O'
-|| array1[0] === 'O' && array2[1] === 'O' && array3[2] === 'O'
-|| array1[2] === 'O' && array2[1] === 'O' && array3[0] === 'O'
-) { console.log('win-o.txt');
-} else if (array1[0] === 'X' && array1[1] === 'X' && array1[2] === 'X'
-|| array2[0] === 'X' && array2[1] === 'X' && array2[2] === 'X'
-|| array3[0] === 'X' && array3[1] === 'X' && array3[2] === 'X'
-|| array1[0] === 'X' && array2[0] === 'X' && array3[0] === 'X'
-|| array1[1] === 'X' && array2[1] === 'X' && array3[1] === 'X'
-|| array1[2] === 'X' && array2[2] === 'X' && array3[2] === 'X'
-|| array1[0] === 'X' && array2[1] === 'X' && array3[2] === 'X'
-|| array1[2] === 'X' && array2[1] === 'X' && array3[0] === 'X'
-) { console.log('win-x.txt');
-} else {
-  console.log('draw.txt')
+function whoIsTheWinner(filename: string) {
+  try {
+    let fileContent: string = fs.readFileSync(filename, charEncoding);
+    console.log('Valid file');
+
+    if (
+      (fileContent[0] && fileContent[1] && fileContent[2] === 'O')
+      || (fileContent[3] && fileContent[4] && fileContent[5] === 'O')
+      || (fileContent[6] && fileContent[7] && fileContent[8] === 'O')
+      || (fileContent[0] && fileContent[4] && fileContent[7] === 'O')
+      || (fileContent[1] && fileContent[4] && fileContent[7] === 'O')
+      || (fileContent[2] && fileContent[5] && fileContent[8] === 'O')
+      || (fileContent[1] && fileContent[4] && fileContent[8] === 'O')
+      || (fileContent[2] && fileContent[4] && fileContent[6] === 'O')
+    ) {
+      return 'O';
+    } else if (
+      (fileContent[0] && fileContent[1] && fileContent[2] === 'X')
+      || (fileContent[3] === 'X' && fileContent[4] === 'X' && fileContent[5] === 'X')
+      || (fileContent[6] === 'X' && fileContent[7] === 'X' && fileContent[8] === 'X')
+      || (fileContent[0] === 'X' && fileContent[4] === 'X' && fileContent[7] === 'X')
+      || (fileContent[1] === 'X' && fileContent[4] === 'X' && fileContent[7] === 'X')
+      || (fileContent[2] === 'X' && fileContent[5] === 'X' && fileContent[8] === 'X')
+      || (fileContent[1] === 'X' && fileContent[4] === 'X' && fileContent[8] === 'X')
+      || (fileContent[2] === 'X' && fileContent[4] === 'X' && fileContent[6] === 'X')
+    ) {
+      return 'X';
+    } else {
+      return 'DRAW';
+    }
+  }
+ catch (error) {
+  console.log('Invalid file');
+}
 }
 
-
+console.log(whoIsTheWinner('win-o.txt.txt'));
+console.log(whoIsTheWinner('win-x.txt.txt'));
+console.log(whoIsTheWinner('draw.txt.txt'));
