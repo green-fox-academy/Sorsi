@@ -13,7 +13,7 @@ let students: any[] = [
 // create a function that takes a list of students and logs: 
 //  - how many candies they have on average
 
-function moreThan4Candies (input: any[]) {
+function moreThan4Candies(input: any[]) {
   let listMoreThan4CandiesOwner: any[] = [];
   input.forEach(input => {
     if (input.candies > 4) {
@@ -23,4 +23,28 @@ function moreThan4Candies (input: any[]) {
   return listMoreThan4CandiesOwner;
 }
 
-console.log(moreThan4Candies(students))
+console.log(moreThan4Candies(students));
+
+function averageCandies(students: any[]) {
+  let sum: number = 0;
+  students.forEach(students => {
+    sum += students.candies;    
+  })
+  sum = sum / students.length;
+  return sum;
+}
+
+console.log(averageCandies(students));
+
+function averageAge(input: any[]) {
+  let average: number = 0;
+  for (let i: number = 0; i < input.length; i++) {
+    if (input[i].candies > 4) {
+      average += input[i].age;
+    }
+  }
+  average = average / 2;
+  return average;
+}
+
+console.log(averageAge(students));
