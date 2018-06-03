@@ -15,3 +15,14 @@ let students: any[] = [
   // - how many candies are owned by students
   // create a function that takes a list of students and logs:
   // - Sum of the age of people who have lass than 5 candies
+
+  function candyOwners(students: any[]): number {
+    let totalCandies: number = 0;
+    students.forEach(function(value) {
+      totalCandies += value.candies;
+    });
+    return totalCandies;
+  }
+
+  console.log(candyOwners(students));
+  
