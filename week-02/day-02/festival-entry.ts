@@ -15,15 +15,24 @@ const queue: any[] = [
 ];
 
 function securityCheck(queue: any[]): any {
+  let festList = [];
   for (let i: number = 0; i < queue.length; i++) {
-    if (queue[i].guns > 0) {
+    if (queue[i].alcohol && queue[i].guns === 0) {
+      festList.push(queue[i].name);
+    } if (queue[i].guns > 0) {
       watchlist.push(queue[i].name);
-    }    
+    } if (queue[i].alcohol > 0) {
+      securityAlcoholLoot += queue[i].alcohol;
+      queue[i].alcohol === 0;
+    }
   }
-  return watchlist;
+  return festList
 }
 
 console.log(securityCheck(queue));
+console.log(watchlist);
+console.log(securityAlcoholLoot);
+console.log(queue);
 
 // Queue of festivalgoers at entry
 // no. of alcohol units
@@ -32,4 +41,3 @@ console.log(securityCheck(queue));
 // If guns are found, remove them and put them on the watchlist (only the names)
 // If alcohol is found confiscate it (set it to zero and add it to security_alchol_loot) and let them enter the festival
 //export = securityCheck;
-
