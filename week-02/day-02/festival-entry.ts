@@ -16,17 +16,20 @@ const queue: any[] = [
 
 function securityCheck(queue: any[]): any {
   let festList = [];
-  for (let i: number = 0; i < queue.length; i++) {
-    if (queue[i].alcohol && queue[i].guns === 0) {
+  for (let i: number = queue.length - 1; i >= 0; i--) {
+    if (queue[i].alcohol === 0 && queue[i].guns === 0) {
       festList.push(queue[i].name);
     } if (queue[i].guns > 0) {
       watchlist.push(queue[i].name);
+      securityAlcoholLoot += queue[i].alcohol;      
+      queue.splice(i, 1);      
     } if (queue[i].alcohol > 0) {
       securityAlcoholLoot += queue[i].alcohol;
-      queue[i].alcohol === 0;
+      queue[i].alcohol = 0;
+      festList.push(queue[i].name);
     }
   }
-  return festList
+  return festList;
 }
 
 console.log(securityCheck(queue));
