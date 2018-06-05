@@ -10,9 +10,11 @@ let accounts: any[] = [
 // The output should be: "Igor", "203004099.2"
 
 function getNameAndBalance(input: any[]) {
+  let temp: any[] = [];
   input.forEach(accounts => {
-  console.log(`${accounts.client_name} ${accounts.balance}`);
-  })  
+    temp.push(`${accounts.client_name}, ${accounts.balance}`);
+  })
+  return temp;
 };
 
 console.log(getNameAndBalance(accounts));
@@ -23,6 +25,28 @@ console.log(getNameAndBalance(accounts));
 //  - from account_number
 //  - to account_number
 //  - amount of cash to transfer
+
+function transferAmount(accounts: any[], from: number, to: number, amount: number) {
+  let newList: any[] = [];
+  let fromAccount: boolean = false;
+  let toAccount: boolean = false;
+  for (let i: number = 0; i < accounts.length; i++) {
+    if (from === accounts[i].account_number) {
+      accounts[i].balance -= amount;
+      fromAccount = true;
+    }
+    if (to === accounts[i].account_number) {
+      accounts[i].balance += amount;
+      toAccount = true;
+    }
+  }
+  if (!fromAccount || !toAccount) {
+    return '404';
+  }
+  return accounts;
+}
+
+console.log(transferAmount(accounts, 91234543, 43546731, 4099))
 //
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 // transferAmount(accounts, 43546731, 23456311, 500.0);
