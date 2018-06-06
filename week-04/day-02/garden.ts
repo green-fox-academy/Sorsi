@@ -29,8 +29,17 @@ class Garden {
   public show() {
     for (let i: number = 0; i < this.listOfPlans.length; i++) {
      if (this.listOfPlans[i].currentWaterLevel < this.listOfPlans[i].thresHold) {
-       console.log(`The ${} needs water.`);
+       console.log(`The ${this.listOfPlans[i]} needs water.`);
      }
     }
   }
 }
+
+let flower1 = new Flowers('yellow');
+let flower2 = new Flowers('blue');
+let tree1 = new Trees('purple');
+let tree2 = new Trees('orange');
+
+let garden = new Garden('green')
+
+console.log(garden.show())
