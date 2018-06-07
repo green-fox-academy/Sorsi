@@ -19,15 +19,57 @@ function readFromFile(filename: string) {
   }
 }
 
-function getYear(filename: string) {
+function getYear() {
+
   let content: string = readFromFile('births.csv');
-  for (let i: number = 0; i < content.length; i++) {
-    for (let j: number = 0; j < content[i].length) {
-      
-    }
+  let txtArray: string[] = content.split('\r\n');
+
+  let newArray: string[][] = [];
+  for (let i: number = 0; i < txtArray.length; i++) {
+    txtArray[i].split(';');
+    newArray.push(txtArray[i].split(';'));
+
   }
+  //console.log(newArray)
+
+  let birthdays: string[] = [];
+  for (let i: number = 0; i < newArray.length; i++) {
+
+    birthdays.push(newArray[i][1]);
+
+
+  }
+
+
+  let birthYears: string[][] = [];
+  let finalList: string[] = [];
+  for (let i: number = 0; i < birthdays.length; i++) {
+    birthdays[i].split('-');
+    birthYears.push(birthdays[i].split('-'));
+    finalList.push(birthYears[i][0])
+
+  }
+
+  finalList.sort()
+
+  return finalList;
 }
 
+let result = (getYear());
 
+//console.log(typeof result)
 
-console.log(typeof content)
+function yearCount(rd: string[]): Object {
+  let counter: Object = {};
+  for (let i: number = 0; i < rd.length; i++) {
+    //let nmbr = rd[i];
+    if (counter[rd[i]]) {
+      counter[rd[i]]++;
+    } else {
+      counter[rd[i]] = 1;
+    }
+  }
+  return counter
+}
+
+console.log(yearCount(result))
