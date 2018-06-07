@@ -6,7 +6,6 @@
 // - returns the year when the most births happend.
 // You can find such a csv file in this directory: births.csv
 // If you pass births.csv to your function, the result should be 2006.
-
 declare function require(path: string): any;
 let fs = require('fs');
 let charEncoding = 'utf-8';
@@ -26,7 +25,6 @@ function getYear() {
 
   let newArray: string[][] = [];
   for (let i: number = 0; i < txtArray.length; i++) {
-    txtArray[i].split(';');
     newArray.push(txtArray[i].split(';'));
   }
 
@@ -38,7 +36,6 @@ function getYear() {
   let birthYears: string[][] = [];
   let finalList: string[] = [];
   for (let i: number = 0; i < birthdays.length; i++) {
-    birthdays[i].split('-');
     birthYears.push(birthdays[i].split('-'));
     finalList.push(birthYears[i][0]);
   }
@@ -49,7 +46,6 @@ function getYear() {
 let result = (getYear());
 
 //console.log(typeof result)
-
 function yearCount(rd: string[]): Object {
   let counter: Object = {};
   if (rd.length == 0) {
