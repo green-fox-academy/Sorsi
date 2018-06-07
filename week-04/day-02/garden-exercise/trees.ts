@@ -1,12 +1,15 @@
 'use strict';
 
-import { Plants } from './plants';
+import { Plant } from "./plants";
 
-class Trees extends Plants {
-  constructor(treeColor: string) {
-    super(treeColor);
-    this.thresHold = 10;
+export class Tree extends Plant {
+  
+  constructor(color: string) {
+    super();
+    this.name = 'Tree';
+    this.color = color;
+    this.currentWaterAmount = 0;
+    this.waterNeed = 10;
+    this.absorbingAbility = 0.4;
   }
 }
-
-export { Trees };
