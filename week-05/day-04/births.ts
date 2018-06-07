@@ -10,21 +10,20 @@ declare function require(path: string): any;
 let fs = require('fs');
 let charEncoding = 'utf-8';
 
-function readFromFile(filename: string) {
+function getYear(filename: string) {
+  let content: string;
   try {
-    return fs.readFileSync(filename, charEncoding);
-  } catch (error) {
-    return null;
+    content = fs.readFileSync(filename, charEncoding);
   }
-}
-
-function getYear() {
-
-  let content: string = readFromFile('births.csv');
+  catch (err) {
+    console.log(`Can't open file "${filename}"`);
+  }
   let txtArray: string[] = content.split('\r\n');
-
+  let counter: Object = {};
   let newArray: string[][] = [];
+
   for (let i: number = 0; i < txtArray.length; i++) {
+    txtArray[i].split(';');
     newArray.push(txtArray[i].split(';'));
   }
 
@@ -36,26 +35,19 @@ function getYear() {
   let birthYears: string[][] = [];
   let finalList: string[] = [];
   for (let i: number = 0; i < birthdays.length; i++) {
+    birthdays[i].split('-');
     birthYears.push(birthdays[i].split('-'));
     finalList.push(birthYears[i][0]);
   }
   finalList.sort()
-  return finalList;
-}
-
-let result = (getYear());
-
-//console.log(typeof result)
-function yearCount(rd: string[]): Object {
-  let counter: Object = {};
-  if (rd.length == 0) {
+  if (finalList.length == 0) {
     return null;
   }
-  let maxE1 = rd[0];
+  let maxE1 = finalList[0];
   let maxCount: number = 1;
 
-  for (let i: number = 0; i < rd.length; i++) {
-    let nmbr = rd[i];
+  for (let i: number = 0; i < finalList.length; i++) {
+    let nmbr = finalList[i];
     if (counter[nmbr] == null) {
       counter[nmbr] = 1;
     } else {
@@ -69,4 +61,4 @@ function yearCount(rd: string[]): Object {
   return maxE1
 }
 
-console.log(yearCount(result));
+console.log(getYear('births.csv'));
