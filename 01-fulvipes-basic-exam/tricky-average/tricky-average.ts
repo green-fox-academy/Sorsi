@@ -31,6 +31,7 @@ function sortArray(numberArray: number[]): number[] {
         let temp: number = numberArray[i];
         numberArray[i] = numberArray[j];
         numberArray[j] = temp;
+        console.log(numberArray)
       }
     }
   }
