@@ -1,0 +1,19 @@
+.container {
+  background: rgb(255, 214, 42);
+  height: 400px;
+  width: 100%;
+  max-width: 1222px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.item {
+  background: rgb(176, 42, 255);
+  height: 100px;
+  width: 100px;
+  list-style-type: none;
+  display: inline-block;
+  align-items: center;
+  margin-right: 10px;
+}
