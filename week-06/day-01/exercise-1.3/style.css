@@ -14,7 +14,6 @@ body{
   min-width: 100px;
   float: left;
   display: flex;
-  flex-direction: row-reverse;
 }
 /* .item :nth-child(1) {order: 3;}
 .item :nth-child(2) {order: 2;}
