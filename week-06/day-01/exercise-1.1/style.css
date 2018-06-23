@@ -9,8 +9,8 @@ body{
 }
 
 .item{
-  height: 100px;
-  min-width: 100px;
+  height: 150px;
+  min-width: 150px;
   float: left;
 }
 
