@@ -1,0 +1,18 @@
+.container {
+  background: rgb(255, 214, 42);
+  height: 400px;
+  width: 100%;
+  max-width: 1222px;
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.item {
+  background: rgb(176, 42, 255);
+  height: 100px;
+  width: 100px;
+  list-style-type: none;
+  margin-left: 10px;
+}
