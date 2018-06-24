@@ -1,0 +1,45 @@
+body {
+  font-family: Franklin Gothic Medium;
+  font-size: 30px;
+  background: rgb(47, 48, 96);
+}
+
+ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  height: 100%;
+}
+
+li {
+  width: 20%;
+  height: 90px;
+  color: beige;
+  background: red;
+  text-align: center;
+  list-style: none;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center; /* cross axis */
+  justify-content: center; /* main axis */
+  box-shadow: 2px 2px;
+}
+
+.buttons:hover {
+  filter: brightness(90%);
+}
+
+.button-1 {
+  background: rgb(0, 178, 239);
+  background: linear-gradient(90deg, rgb(0, 168, 236) 0%, rgba(0,174,238) 35%, rgba(0,212,255,1) 100%);
+}
+
+.button-2 {
+  background: white;
+  color:rgb(173, 171, 187);
+}
+
+.button-3 {
+  background: rgb(213, 70, 53);
+  color: rgb(173, 171, 187);
+}
