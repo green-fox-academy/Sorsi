@@ -12,20 +12,19 @@ for (let i = 2; i < 101; i++) {
   sectonList.appendChild(newDiv);
 }
 
-let divList = document.querySelectorAll('div')
+const divList = document.querySelectorAll('div')
 
 console.log(divList)
 
-/* function primeMaker () {
-
-  for (let i = 2; i < divList.length; i++) {
-    if (divList[i] % divList[i] === 0) {
-      return false;
+const primeMaker = (divList, callback) => {
+  for (let i = 0; i < divList.length; i++) {
+    if (callback(parseInt(divList[i].textContent))) {
+      divList[i].setAttribute('class', 'prime');
     } else {
-      return num !== 1;
+      divList[i].setAttribute('class', 'not-prime');
     }
   }
-} */
+}
 
 const checker = num => {
   for (let i = 2; i < num; i++) {
@@ -36,3 +35,5 @@ const checker = num => {
     }
   }
 }
+
+primeMaker(divList, checker)
