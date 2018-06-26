@@ -8,22 +8,10 @@
 
 const words = ['apple', 'pear', 'melon', 'grapes'];
 
-const consoling = (array, callback) => {
-  
-  
-  setTimeout(() => { callback; }, 1000);
-  for (let i = 0; i < array.length; i++) {
-    console.log(array[i]);
-  }
-}
-
-/* const printing = () => {
+const printing = () => {
   console.log('apple');
   setTimeout(() => { console.log('pear'); }, 1000);
   setTimeout(() => { console.log('melon'); }, 3000);
   setTimeout(() => { console.log('grapes'); }, 5000);
 }
-printing(); */
-
-consoling()
-
+printing();
