@@ -29,8 +29,13 @@ console.log(mapWith([1, 2, 3], addOne));
 const words = ['map', 'reduce', 'filter'];
 
 const removeSecondLetter = (element) => {
-
-  return element[1];
+  let output = [];
+  for (let i = 0; i < element.length; i++) {
+    if (i % 2 === 0) {
+      output.push(element[i]);
+    }
+  }
+  return output.join('');
 }
 
 console.log(mapWith(words, removeSecondLetter));
