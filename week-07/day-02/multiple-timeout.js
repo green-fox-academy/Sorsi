@@ -6,7 +6,22 @@
 // melon -> after 3 seconds
 // grapes -> after 5 seconds
 
-setTimeout(() => {
+/* setTimeout(() => {
   console.log('apple'); // prints after one second
 }, 3000);
 
+const timer = (array, callback) => {
+
+}
+
+words = ['apple', 'pear', 'melon', 'grapes'];
+
+ */
+
+const printing = () => {
+  console.log('apple');
+  setTimeout(() => { console.log('pear'); }, 1000);
+  setTimeout(() => { console.log('melon'); }, 3000);
+  setTimeout(() => { console.log('grapes'); }, 5000);
+}
+printing();
