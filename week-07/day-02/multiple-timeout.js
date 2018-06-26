@@ -6,22 +6,24 @@
 // melon -> after 3 seconds
 // grapes -> after 5 seconds
 
-/* setTimeout(() => {
-  console.log('apple'); // prints after one second
-}, 3000);
+const words = ['apple', 'pear', 'melon', 'grapes'];
 
-const timer = (array, callback) => {
-
+const consoling = (array, callback) => {
+  
+  
+  setTimeout(() => { callback; }, 1000);
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
 }
 
-words = ['apple', 'pear', 'melon', 'grapes'];
-
- */
-
-const printing = () => {
+/* const printing = () => {
   console.log('apple');
   setTimeout(() => { console.log('pear'); }, 1000);
   setTimeout(() => { console.log('melon'); }, 3000);
   setTimeout(() => { console.log('grapes'); }, 5000);
 }
-printing();
+printing(); */
+
+consoling()
+
