@@ -27,37 +27,110 @@ app.get('/hello', (req, res) => {
   })
 });
 
-app.get('/api/title', (req, res) => {
+app.get('/api/posts/:id', (req, res) => {
+  let sql = `SELECT title FROM posts WHERE id = '${req.params.id}';`;
+
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send();
+      return;
+    } else {
+      res.status(200).send;
+
+      res.json({
+        title: rows,
+      });
+    }
+  });
+});
+
+app.get('/api/posts', (req, res) => {
   let sql = `SELECT * FROM posts;`;
-  
+
   conn.query(sql, (err, rows) => {
     if (err) {
       console.log(err);
-      res.status(200).send();
+      res.status(500).send();
       return;
-    }
+    } else {
+      res.status(200).send;
 
-    res.json({
-      posts: rows,
-    })
+      res.json({
+        posts: rows,
+      });
+    }
   });
 });
 
-app.post('/api/title', (req, res) => {
+app.post('/api/posts', (req, res) => {
   let sql = `INSERT INTO posts (title, url) VALUES ('${req.body.title}', '${req.body.url}');`;
-  
+
   conn.query(sql, (err, rows) => {
     if (err) {
       console.log(err);
+      res.status(500).send();
+      return;
+    } else {
       res.status(200).send();
+      res.json({
+        posts: rows,
+      })
+    }
+  });
+});
+
+app.put('/api/posts/:id/upvote', (req, res) => {
+  let sql = `UPDATE posts SET vote = '1', score = score + 1 WHERE id = '${req.params.id}';`; // az útvonalban lévő : az param, 
+
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send();
+      return;
+    } 
+
+    let queryTXT = `SELECT * FROM posts WHERE id = '${req.params.id};'`
+
+    conn.query(queryTXT, (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      }
+      res.json({
+        result: rows,
+      });
+    });
+  });
+});
+
+app.put('/api/posts/:id/downvote', (req, res) => {
+  let sql = `UPDATE posts SET vote = '-1', score = score - 1  WHERE id = '${req.params.id}';`;
+
+  conn.query(sql, (err, rows) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send();
       return;
     }
 
-    res.json({
-      posts: rows,
-    })
+    let queryTXT = `SELECT * FROM posts WHERE id = '${req.params.id};'`
+
+    conn.query(queryTXT, (err, rows) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send();
+        return;
+      }
+      res.json({
+        result: rows,
+      });
+    });
   });
 });
+
+/* app.delete() */
 
 app.listen(PORT, () => {
   console.log(`The server is up and running on port ${PORT}`);
