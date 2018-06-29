@@ -88,9 +88,9 @@ app.put('/api/posts/:id/upvote', (req, res) => {
       console.log(err);
       res.status(500).send();
       return;
-    } 
+    }
 
-    let queryTXT = `SELECT * FROM posts WHERE id = '${req.params.id};'`
+    let queryTXT = `SELECT * FROM posts WHERE id = '${req.params.id};'`;
 
     conn.query(queryTXT, (err, rows) => {
       if (err) {
@@ -99,7 +99,7 @@ app.put('/api/posts/:id/upvote', (req, res) => {
         return;
       }
       res.json({
-        result: rows,
+        message: `Posted a post with ${req.params.id}`,
       });
     });
   });
@@ -115,7 +115,7 @@ app.put('/api/posts/:id/downvote', (req, res) => {
       return;
     }
 
-    let queryTXT = `SELECT * FROM posts WHERE id = '${req.params.id};'`
+    let queryTXT = `SELECT * FROM posts WHERE id = '${req.params.id};'`;
 
     conn.query(queryTXT, (err, rows) => {
       if (err) {
@@ -130,7 +130,20 @@ app.put('/api/posts/:id/downvote', (req, res) => {
   });
 });
 
-/* app.delete() */
+app.delete('/api/posts/:id', (req, res) => {
+  let sql = `DELETE FROM posts WHERE id = ${req.params.id};`;
+
+  conn.query(sql, (err) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send();
+      return;
+    }
+    res.json({
+      message: `ID: ${req.params.id} have been deleted.`,
+    });
+  });
+})
 
 app.listen(PORT, () => {
   console.log(`The server is up and running on port ${PORT}`);
