@@ -11,20 +11,40 @@
   <div class="main-container">
     <h1>Our cocktails:</h1>
     <div class="linkContainer">
+        <a href="/">all</a>
       <% alcoholList.forEach((alcoholType) => { %>
         <a href="?alcohol=<%=alcoholType%>">
           <%= alcoholType %>
         </a>
         <% }) %>
     </div>
-    <ul>
-      <% cocktailList.forEach((cocktail) => { %>
-        <li>
-          <%= cocktail.name %>
-            </a>
-        </li>
-        <% }) %>
-    </ul>
+
+    <table>
+
+      <thead>        
+        <th class="name">Name</th>
+        <th class="price">Price</th>
+      </thead>
+
+      <tbody>
+        <% cocktailList.forEach((cocktail) => { %>
+          <tr>
+            <td>
+              <%= cocktail.name %>
+              <% if (!cocktail.isAlcoholic) { %>
+               <p>(non-alcoholic)</p>
+            <% } %>
+              <%= cocktail.contains %>
+            </td>
+            <td>
+              <%= cocktail.price %>
+            </td>
+            <% }) %>
+          </tr>
+      </tbody>
+
+    </table>
+
   </div>
 </body>
 

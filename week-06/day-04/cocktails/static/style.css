@@ -1,11 +1,11 @@
 body {
-  min-width: 600px;
-  max-width: 1200px;
+  min-width: 800px;
+  max-width: 900px;
   background-color: beige;
-  display: flex;
+  /* display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
@@ -13,41 +13,53 @@ body {
   display: flex;
   flex-flow: column;
   align-items: left;
-  justify-content: center;  
+  justify-content: center;
 }
 
 h1 {
   text-align: left;
   font-size: 66px;
   margin: 3%;
+  margin-left: 0%;
 }
 
 .linkContainer {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  padding: 30px;  
-  border-color: green;
-  background-color: rgb(146, 153, 151);
-  justify-content: space-between;
+ /*  display: flex;
+  width: inherit; */
+  padding: 10px;
+  padding-left: 0%;
+  /* justify-content: space-between;
+  position: relative; */
 }
 
 a {
   padding: 3px;
-  color: rgb(12, 12, 66);
+  color: rgb(56, 56, 241);
   font-size: 34px;
   text-decoration: none;
   text-transform: uppercase;
-  
 }
 
-ul {
-  display: flex;
-  flex-flow: column;
+table {
+  /* position: relative; */
+  background: white  
 }
 
-li {
-  list-style: none;
-  font-size: 33px;
-  padding: 5px;
+thead {
+  background-color: black;
+  color: white;
+  font-size: 22px;
+}
+
+th {
+  padding: 5%;
+}
+
+td {
+  padding: 1%;
+  font-size: 20px;
+}
+
+.price {
+  width: 200px;
 }

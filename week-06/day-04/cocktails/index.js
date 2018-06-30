@@ -21,7 +21,7 @@ app.use('/static', express.static('static'));
 
 app.get('/', (req, res) => {
   let cocktailList = [];
-  if (req.query.alcohol) {
+  if (req.query.alcohol !== undefined) {
     cocktails.forEach((element) => {
       if (element.contains.indexOf(req.query.alcohol) !== -1) {
         cocktailList.push(element);
