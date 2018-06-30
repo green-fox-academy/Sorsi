@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cocktails</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <h1>Our cocktails:</h1>
+    <div class="linkContainer">
+      <% alcoholList.forEach((alcoholType) => { %>
+        <a href="?alcohol=<%=alcoholType%>">
+          <%= alcoholType %>
+        </a>
+        <% }) %>
+    </div>
+    <ul>
+      <% cocktailList.forEach((cocktail) => { %>
+        <li>
+          <%= cocktail.name %>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+  </div>
+</body>
+
+</html>
