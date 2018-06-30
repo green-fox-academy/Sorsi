@@ -9,7 +9,7 @@ app.use('/assets', express.static('assets'));
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');//ha a key - value pár kifejezése megegyezik, elegendő egyszer kiírni
 });
-
+/* //----------DOUBLING------------------// */
 app.get('/doubling/', (req, res) => {
   console.log(req.query)
   if (req.query.input) {
@@ -24,7 +24,7 @@ app.get('/doubling/', (req, res) => {
     })
   }
 });
-
+/* //----------GREETER------------------// */
 app.get('/greeter', (req, res) => {
   console.log(req.query)
   if (!req.query.name) {
@@ -41,7 +41,7 @@ app.get('/greeter', (req, res) => {
     welcome_message: `Oh, hi there ${req.query.name}, my dear ${req.query.title}!`
   })
 })
-
+/* //----------APPENDA------------------// */
 app.get('/appenda/:appendable', (req, res) => {
   if (req.params.appendable) {
     res.json({
@@ -52,9 +52,9 @@ app.get('/appenda/:appendable', (req, res) => {
       .send('Not found');
   }
 })
-
-app.post('/dountil/:what', function (req, res) { 
-  if (req.params.what === 'sum') {  
+/* //----------DO UNTIL------------------// */
+app.post('/dountil/:what', function (req, res) {
+  if (req.params.what === 'sum') {
     res.json({
       result: counter(req.body.until)
     })
@@ -85,5 +85,30 @@ function refactorio(n) {
     return n * refactorio(n - 1);
   }
 }
+/* //----------ARRAY HANDLER------------------// */
+app.post('/arrays', (req, res) => {
+  let what = req.body.what;
+  let result = 0;
+
+  if (what === 'sum') {
+    req.body.numbers.forEach(elem => {
+      result += elem;
+    });
+  } else if (what === 'multiply') {
+    result = 1;
+    req.body.numbers.forEach(elem => {
+      result *= elem;
+    });
+  } else if (what === 'double') {
+    result = [];
+    req.body.numbers.forEach(elem => {
+      result.push(elem * 2);
+    });
+  } else {
+    res.json({
+      error: "Please provide what to do with the numbers!"
+    });
+  }
+});
 
 module.exports = app;
