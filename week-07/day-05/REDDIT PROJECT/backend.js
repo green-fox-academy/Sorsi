@@ -6,11 +6,10 @@ const express = require('express');
 const mysql = require('mysql');
 const app = express();
 const PORT = 3000;
+const path = require('path');
 
-app.use(express.static(__dirname));
 app.use(express.json());
-app.use(express.static('public'));
-
+app.use('/public', express.static('public'));
 
 const conn = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -20,7 +19,7 @@ const conn = mysql.createConnection({
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/hello', (req, res) => {
