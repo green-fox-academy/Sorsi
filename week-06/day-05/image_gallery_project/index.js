@@ -12,23 +12,27 @@ window.onload = () => {
     { id: 7, title: 'Fight Club', year: 1999, src: 'images/movie07.jpg', desc: `An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soapmaker, forming an underground fight club that evolves into something much, much more.` },
   ]
 
-  let title = document.getElementById('title')
-
-  console.log(title)
-
-  console.log(images[4])
-
   let actual = document.querySelector('.actual-pic');
-  let first = document.createElement('img');
+  let title = document.querySelector('.title');
+  let year = document.querySelector('.year');
+  let desc = document.querySelector('.desc');
+  let left = document.querySelector('.left-arrow');
 
   actual.setAttribute('style', `background-image: url('${images[0].src}')`);
-  console.log(actual)
+  title.innerText = images[0].title;
+  year.innerText = images[0].year;
+  desc.innerText = images[0].desc;
 
   document.querySelectorAll('.thumbnails img').forEach((element, index) => {
     element.addEventListener('click', () => {
-      console.log(element.src);
       actual.setAttribute('style', `background-image: url('${images[index].src}')`);
+      title.innerText = images[index].title;
+      year.innerText = images[index].year;
+      desc.innerText = images[index].desc;
     });
   });
+
+
+
 
 }
