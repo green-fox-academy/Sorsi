@@ -40,9 +40,10 @@ a {
   text-transform: uppercase;
 }
 
-table {
+table, td {
   /* position: relative; */
-  background: white  
+  background: white;
+  border: 1px solid black;
 }
 
 thead {

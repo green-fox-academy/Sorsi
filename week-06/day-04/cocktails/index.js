@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
       }
     });
   } else {
-    coctailList = cocktails;
+    cocktailList = cocktails;
   }
   res.render('cocktails', {
     cocktailList,
