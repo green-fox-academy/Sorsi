@@ -22,3 +22,18 @@ button.addEventListener('click', () => {
     button.disabled = true;
   }
 });
+
+//-----------------THIRD VERSION-------------------------
+let count = 0;
+
+function getDate() {
+  count++;
+  console.log(Date.now());
+  console.log(count);
+
+  if (count === 3) {
+    button.removeEventListener('click', getDate);
+  }
+}
+
+button.addEventListener('click', getDate);
