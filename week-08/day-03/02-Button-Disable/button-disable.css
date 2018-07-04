@@ -80,9 +80,9 @@ p {
   background: white;
 }
 
-#love-cats, 
-#sign-up {
-  font-size: 18px;
+.buttons {
+  width: 50px;
+  font-size: 48px;
   margin: 40px;
 }
 
@@ -90,4 +90,9 @@ p {
   width: 800px;
   background-color: #eee;
   opacity: 0.88;
+}
+
+.questions {
+  font-size: 44px;
+  margin: 22px;
 }
