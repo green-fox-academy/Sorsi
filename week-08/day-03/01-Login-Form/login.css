@@ -1,0 +1,41 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+body {
+  background-color: rgb(235, 235, 235);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  height: 500px;
+  width: 600px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -300px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+input {
+  height: 40px;
+  width: 300px;
+}
+
+button {
+  filter: brightness(90%);
+  -webkit-text-fill-color: white;
+  background-color: rgb(49, 47, 47);
+  width: 130px;
+  height: 45px;
+  border-radius: 23px;
+}

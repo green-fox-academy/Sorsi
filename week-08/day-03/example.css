@@ -1,0 +1,12 @@
+/* leveszem a dupla bordert */
+table {
+  border-collapse: collapse; 
+}
+/* minden párost / páratlant más háttérrel */
+.my-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input {
+  margin-top: 30px;
+}
