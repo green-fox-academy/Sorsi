@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Reddit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
   <script src="/public/frontend.js"></script>
+  <link rel="stylesheet" media="screen" href="/public/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
 </head>
+
 <body>
-  <div class="content">Reddit content
-    <div class="post"></div>
+  <div class="image-container">
+    <img src="/public/space.png">
+    <div id="top-text">SPACE</div>
   </div>
+
+  <div class="content">Reddit content
+    <button>click</button>
+  </div>
+
+  <form class="post-form">
+
+    <div class="container">
+
+      <span>TITLE</span>
+      <input type="text" autofocus>
+
+      <span>URL</span>
+      <input type="text">
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
 </body>
+
 </html>
