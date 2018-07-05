@@ -3,6 +3,8 @@ window.onload = () => {
     const host = 'http://localhost:3000';
 
     const http = new XMLHttpRequest();
+    http.open('GET', `${host}/api/posts`, true);
+
     http.onload = () => {
         const result = JSON.parse(http.responseText);
         console.log(result.posts[0]);
@@ -37,11 +39,30 @@ window.onload = () => {
             p.appendChild(modify);
             p.appendChild(remove);
             content.appendChild(p);
-        });        
-        
-    }
-
-    http.open('GET', `${host}/api/posts`, true);
+        });
+    };
     http.send();
+
+    const http2 = new XMLHttpRequest();
+    http2.open('POST', `${host}/api/posts`, true);
+
+    http2.setRequestHeader('Content-Type', 'application/json');
+
+    http2.onload = () => {
+        const response = JSON.parse(http2.responseText);
+        console.log(response)
+    };
+
+    let postForm = document.querySelector('.post-form');
+
+    postForm.addEventListener('submit', (e) => {
+        e.preventDefault(); //megállítja a form alapműködését ()
+        console.log(e.target.elements.title.value)
+
+        http2.send(JSON.stringify({
+            title: e.target.elements.title.value,
+            url: e.target.elements.url.value,
+        }));
+    });
 
 }
