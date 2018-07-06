@@ -38,5 +38,5 @@ window.onload = () => {
   movies.addEventListener('change', (e) => {
     result.innerText = e.target.value;
   });
-  
+
 }

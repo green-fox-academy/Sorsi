@@ -26,8 +26,9 @@ window.onload = () => {
             let timestamp = document.createElement('h4');
             timestamp.innerText = post.timestamp;
 
-            let url = document.createElement('h6');
+            let url = document.createElement('a');
             url.innerText = post.url;
+            url.setAttribute('href', 'post.url');
 
             let score = document.createElement('h3');
             score.innerText = post.score;

@@ -1,10 +1,9 @@
 'use strict';
 
-let navElement = document.querySelectorAll('nav button');
-console.log(navElement)
+let navButtons = document.querySelectorAll('button');
+console.log(navButtons)
 
-navElement.forEach(element => {
-  if (element.innerHTML = 'Up') {
-    
-  }
+navButtons.forEach(element, index => {
+  
 });
+
