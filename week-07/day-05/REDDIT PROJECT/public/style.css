@@ -33,6 +33,22 @@ button {
   margin: 12px;
 }
 
+.up,
+.down {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url('./upvote.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(196, 149, 47);
+  border-radius: 10px;
+}
+
+.down {
+  background-image: url('./downvote.png');
+}
+
 
 .image-container {
   background-image: url(/public/space.png);
@@ -85,3 +101,23 @@ img {
 p {
   border-radius: 4%;
 }
+
+.post-container {
+  display: flex;
+  flex-flow: row;
+  /* align-items: center */
+}
+
+.vote-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: inherit;
+}
+
+.content-container {
+  display: flex;
+  flex-flow: column;
+  margin: inherit;
+}
+

@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 
-const express = require('express');
+const express = require('express'); //serverhez kell
 const mysql = require('mysql');
 const app = express();
 const PORT = 3000;
@@ -44,7 +44,7 @@ app.get('/api/posts/:id', (req, res) => {
 });
 
 app.get('/api/posts', (req, res) => {
-  let sql = `SELECT * FROM posts;`;
+  let sql = `SELECT * FROM posts order by id desc;`;
 
   conn.query(sql, (err, rows) => {
     if (err) {
