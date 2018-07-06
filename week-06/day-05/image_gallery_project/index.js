@@ -18,13 +18,12 @@ window.onload = () => {
   let desc = document.querySelector('.desc');
   let left = document.querySelector('.left-arrow');
   let right = document.querySelector('.right-arrow');
-
+  let imgIndex = 0;
 
   actual.setAttribute('style', `background-image: url('${images[0].src}')`);
   title.innerText = images[0].title;
   year.innerText = images[0].year;
   desc.innerText = images[0].desc;
-
 
   document.querySelectorAll('.thumbnails img').forEach((element, index) => {
     element.addEventListener('click', () => {
@@ -32,23 +31,31 @@ window.onload = () => {
       title.innerText = images[index].title;
       year.innerText = images[index].year;
       desc.innerText = images[index].desc;
+      imgIndex = index;
+      console.log(imgIndex);
 
-      /* let actualIndex = actual.querySelector('url');
-      console.log(actualIndex) */
       left.addEventListener('click', () => {
-        actual.setAttribute('style', `background-image: url('${images[index - 1].src}')`);
-        title.innerText = images[index - 1].title;
-        year.innerText = images[index - 1].year;
-        desc.innerText = images[index - 1].desc;
+        imgIndex -= 1;
+        if (imgIndex === -1) {
+          imgIndex = document.querySelectorAll('.thumbnails img').length - 1;
+        }
+        actual.setAttribute('style', `background-image: url('${images[imgIndex].src}')`);
+        title.innerText = images[imgIndex].title;
+        year.innerText = images[imgIndex].year;
+        desc.innerText = images[imgIndex].desc;
+      });
 
-      });
-      
       right.addEventListener('click', () => {
-        actual.setAttribute('style', `background-image: url('${images[index + 1].src}')`);
-        title.innerText = images[index + 1].title;
-        year.innerText = images[index + 1].year;
-        desc.innerText = images[index + 1].desc;
+        imgIndex += 1;
+        if (imgIndex === document.querySelectorAll('.thumbnails img').length) {
+          imgIndex = 0;
+        }
+        actual.setAttribute('style', `background-image: url('${images[imgIndex].src}')`);
+        title.innerText = images[imgIndex].title;
+        year.innerText = images[imgIndex].year;
+        desc.innerText = images[imgIndex].desc;
       });
+
     });
   });
 }
