@@ -1,0 +1,92 @@
+.header {
+  grid-area: header;
+}
+
+.elem1 {
+  grid-area: elem1;  
+}
+
+.elem2 {
+  grid-area: elem2;
+}
+
+.elem3 {
+  grid-area: elem3;
+}
+
+.elem4 {
+  grid-area: elem4;
+}
+
+.elem5 {
+  grid-area: elem5;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.main-container {
+  height: 800px;
+  background-color: blanchedalmond;
+  display: grid;
+  grid-template-columns: 10% 40% 20% 20% 10%;
+  grid-template-rows: 10% 40% 40% 10%;
+  gap: 15px;
+  grid-template-areas: 
+  "header header header header header"
+  ". elem1 elem2 elem2 ."
+  ". elem3 elem4 elem5 ."
+  ". footer footer footer .";
+}
+
+.header {
+  background:rgb(176, 42, 255);
+  display: grid;
+  grid-template-columns: 5% 10% 10% 10% 10% 55%;
+  grid-template-rows: 30% 30% 30%;
+  gap: 15px;
+}
+
+.link1 {
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: aqua;
+}
+
+.link2 {
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: aqua;
+}
+
+.link3 {
+  grid-area: 2 / 4 / 3 / 5;
+  background-color: aqua;
+}
+
+.link4 {
+  grid-area: 2 / 5 / 3 / 6;
+  background-color: aqua;
+}
+
+.elem1,
+.elem2,
+.elem3,
+.elem4,
+.elem5 {
+  background:rgb(81, 212, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.kiddo4,
+.kiddo5 {
+  width: 80%;
+  height: 80%;
+  background-color: rgb(233, 0, 32);
+}
+
+.footer {
+  background: rgb(204, 204, 204);
+}
