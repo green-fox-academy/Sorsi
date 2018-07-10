@@ -1,0 +1,32 @@
+.layout {
+  background-color: rgb(78, 73, 50);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 14.28%);
+  grid-template-rows: repeat(6, auto);
+  gap: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.elem {
+  background-color: rgb(255, 214, 42);
+}
+
+.green {
+  background-color: rgb(81, 212, 0);
+  grid-row: 2 / span 5;
+  grid-column: 2 / span 5;
+}
+
+.purple {
+  background-color: rgb(176, 42, 255);
+  width: 50%;
+  height: 50%;
+  color: white;
+}
