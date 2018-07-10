@@ -1,0 +1,35 @@
+.container {
+  background: rgb(51, 51, 51);
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
+  grid-template-rows: repeat(3 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  height: 400px;
+  grid-template-areas: 
+  "one two three"
+  "four five six";
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  background: rgb(176, 42, 255)
+}
+
+.three {
+  grid-area: 1 / 2 / 3 / 4;
+  background: rgb(81, 212, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.kid {
+  background: rgb(255, 214, 42);
+  width: 80%;
+  height: 150px;
+}
