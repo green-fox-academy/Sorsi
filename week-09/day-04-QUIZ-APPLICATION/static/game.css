@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;  
+}
+
+body {
+  background-color: rgb(236, 240, 241);
+  font-family: 'Baloo Bhaijaan', cursive;
+}
+
+.score {
+  font-size: 33px;
+  display: flex;
+  justify-content: center;
+}
+
+#actual-points {
+  margin-left: 10px;
+}
+
+.questions-container {
+  width: 600px;
+  height: 500px;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.questions-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background-color: rgb(52, 152, 219);
+  margin-top: 15px;
+}
+
+.main-container {
+  display: flex;
+  flex-flow: column;
+  height: 1000px;
+}
+
