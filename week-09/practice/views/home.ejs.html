@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>MacroExam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div class="table">
+    <table class="tourist-info" border="1">
+      <thead>
+        <th>Name</th>
+        <th>City</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Longitude</th>
+        <th>Lattitude</th>
+        <th>Recomended age</th>
+        <th>Duration</th>
+      </thead>
+      <tbody>
+        <% data.forEach((element, index => %>
+          <tr id="row-<%= index %>">
+            <td><%= element.attr_name %></td>
+            <td><%= element.city %></td>
+            <td><%= element.category %></td>
+            <td><%= element.price %></td>
+            <td><%= element.longitude %></td>
+            <td><%= element.lattitude %></td>
+            <td><%= element.recommended_age %></td>
+            <td><%= element.duration %></td>
+            <td>
+              <button class="edit-<%= element.id %">
+                Edit
+              </button>
+            </td>
+          </tr>
+        <% }) %>
+
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
