@@ -1,10 +1,15 @@
 'use strict';
- 
+ window.onload = () => {
+
 let getQuestions = new XMLHttpRequest();
+//kérem a backendtől az adatokat
 getQuestions.open('GET', 'http://localhost:3000/questions', true);
 getQuestions.onload = () => {
+  //átalakítom a kapott adatokat
   let response = JSON.parse(getQuestions.responseText);
+  //kiválasztom a HTML containeremben lévő egyetlen delete gombomat
   let parentDiv = document.querySelector('.delete');
+  //végigmegyek a válaszomon
   response.questions.forEach(element => {
     let questionDiv = document.createElement('div');
     let textDiv = document.createElement('div');
@@ -25,7 +30,7 @@ getQuestions.onload = () => {
   });
 }
 getQuestions.send();
-
+//kiválasztom a formom, ha töltik, az inputomat kimentem egy válotóba
 document.querySelector('form').addEventListener('submit', (event) => {
   event.preventDefault();
   console.log(event);
@@ -46,6 +51,7 @@ document.querySelector('form').addEventListener('submit', (event) => {
     answers.push(temp);
   }
   let question = inputs.question.value;
+  
   let postQuestion = new XMLHttpRequest();
   postQuestion.open('POST', 'http://localhost:3000/questions', true);
   postQuestion.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
@@ -57,3 +63,5 @@ document.querySelector('form').addEventListener('submit', (event) => {
     location.reload();
   }
 });
+
+}
