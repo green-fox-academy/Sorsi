@@ -49,3 +49,10 @@ button {
   height: 1000px;
 }
 
+.right {
+  background-color: rgb(39, 174, 96);
+}
+
+.wrong {
+  background-color: red;
+}
