@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="main-container">
+    <% forecasts.forEach (element => { %>
+      <div class="city">
+        <%= element.city %>
+      </div>
+      <div class="country">
+          <%= element.location %>
+      </div>
+      <div class="temperature"></div>
+
+      <% }) %>
+  </div>
+
+</body>
+
+</html>
