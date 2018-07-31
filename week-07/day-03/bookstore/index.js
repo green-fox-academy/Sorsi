@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/title', (req, res) => {
-  let sql = 'SELECT book_name FROM book_mast;';  // az meglévő bookstore adatbázisból kiválasztjuk az összes * authort
+  let sql = 'SELECT book_name FROM book_mast;';  // a meglévő bookstore adatbázisból kiválasztjuk az összes * authort
  /*  let queryInputs = [];
 
   if (req.query.book_id) {
