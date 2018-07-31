@@ -110,5 +110,15 @@ app.post('/arrays', (req, res) => {
     });
   }
 });
+/* //----------SITH------------------// */
+app.post('/sith', (req, res) => {
+  if (req.body.text === '' || !req.body.text) {
+    res.json({
+      error: 'Feed me some text you have to, padawan young you are. Hmmm.'
+    });
+  } else {
+    
+  }
+});
 
 module.exports = app;
