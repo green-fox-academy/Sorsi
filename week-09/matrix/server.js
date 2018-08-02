@@ -22,22 +22,48 @@ app.get('/', (req, res) => {
 });
 
 app.post('/matrix', (req, res) => {
-  let matrix = req.body.matrix;
-  let sql = `INSERT INTO matrix (matrixNumbers) VALUES ('${req.body.matrixNumbers}');`;
-  conn.query(sql, (err) => {
-    if (err) {
-      console.log(err);
-      res.sendStatus(500);
-      return;
+  let splitMatrix = [];
+  let isSquareMatrix = true;
+
+  if (req.body.matrixNumbers === '' || req.body.matrixNumbers.length === 0) {
+    res.status(403).send({
+      message: 'Please insert numbers!'
+    });
+  } else {
+    let matrix = req.body.matrixNumbers.split('\n')
+    matrix.forEach((e) => {
+      splitMatrix.push(e.split(' '));
+    });
+
+    splitMatrix.forEach((elem) => {
+      if (elem.length !== matrix.length) {
+        isSquareMatrix = false;
+      }
+    });
+
+    if (!isSquareMatrix) {
+      res.status(403).send({
+        message: 'This is not a valid matrix. Please, try again!'
+      })
+    } else {
+      let sql = `INSERT INTO matrix (matrixNumbers) VALUES ('${req.body.matrixNumbers}');`;
+      conn.query(sql, (err) => {
+        if (err) {
+          console.log(err);
+          res.sendStatus(500);
+          return;
+        }
+        res.send({
+          message: 'OK, this is a squared matrix. Thank you!',
+        });
+      });
     }
-    res.json({
-      status: 'OK',
-    })
-  });
+  }
 });
 
 app.get('/matrices', (req, res) => {
   let sql = `SELECT * FROM matrix;`;
+
   conn.query(sql, (err, rows) => {
     if (err) {
       console.log(err);
