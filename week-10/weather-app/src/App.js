@@ -11,15 +11,50 @@ const API_KEY = 'bea5333b320643bb4ca57cd6ed1aabf4';
 /* App: appom neve, használhatja a react összetevőket 
 REact.Component: object a package-ből továbbra is */
 class App extends React.Component {
+  /* initial state: egy object, elhagyhatjuk a korábban használt constructort */
+  state = {
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    humidity: undefined,
+    description: undefined,
+    error: undefined
+  }
   /* csinálok egy methodot, ami lekéri az API-t
   arrow functionnal constructor létrehozása nélkül tudom szabadon használni a 'this'-t */
   getWeather = async (e) => {
     /* ezt a fetch részt nem teljesen értem. az url-t beillesztem, amit emailben elküldtek */
     e.preventDefault(); //megelőzi az oldal újratöltését
-    const api_call = await fetch('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=bea5333b320643bb4ca57cd6ed1aabf4');
+    /* létrehozok 2 változót a visszakapott adatom alapján (form->inputfieldjébe, amit beírunk)
+    majd behelyettesítem a fetch mögött url-be, hogy aszerint változzon, amit keresek */
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
     /* átalakítom a visszakapott adatot JSON-né */
     const data = await api_call.json();
-    console.log(data);
+    /* behozok egy if statementet->csak abban az esetben fusson a kód, ha begépelt a felhasználó vmilyen adatot az imput mezőmbe, 
+    tehát a city és country létezik, egyébként meg dobjon vissza egy figyelmeztetést */
+    if (city && country) {
+      console.log(data);
+      /* beépített method */
+      this.setState({
+        temperature: data.main.temp,
+        city: data.name,
+        country: data.sys.country,
+        humidity: data.main.humidity,
+        description: data.weather[0].description,
+        error: ''
+      });
+    } else {
+      this.setState({
+        temperature: undefined,
+        city: undefined,
+        country: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: 'Please enter the city and country that you are looking for!'
+      });
+    }
   }
   /* beépített method, JSX-et ad vissza 
   JSX: HTML-re hasonlít, de nem az, hanem JS */
@@ -31,8 +66,15 @@ class App extends React.Component {
         {/* nem elég, hogy beimportálom az összetevőt, renderelnem is kell, hogy megjelenjen az oldalon */}
         <Titles />
         {/* a válasz adat megszerzésére létrehozott methodot hívom */}
-        <Form getWeather={this.getWeather}/>
-        <Weather />
+        <Form getWeather={this.getWeather} />
+        <Weather
+          temperature={this.state.temperature}
+          city={this.state.city}
+          country={this.state.country}
+          humidity={this.state.humidity}
+          description={this.state.description}
+          error={this.state.error}
+        />
       </div>
     );
   }
